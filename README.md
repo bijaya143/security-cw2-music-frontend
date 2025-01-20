@@ -15,7 +15,7 @@
 
 ### Local Development
 
-1. Clone the repository: https://github.com/st6003/frontend-secb-bijaya143
+1. Clone the repository: https://github.com/bijaya143/security-cw2-music-frontend
 2. Run `npm install` to Install Dependencies.
 3. Copy contents of `.env.example` file to a new file `.env`, If you're on Mac OSX or Linux just run: `cp .env.example .env`
 4. In the `.env` file, add the required credentials.
