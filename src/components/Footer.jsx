@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
       </div> */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Sangeet. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Harmonica. All rights reserved.</p>
         <div className="socials">
           <a href="https://facebook.com">
             <i className="fab fa-facebook-f"></i>

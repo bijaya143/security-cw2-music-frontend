@@ -28,7 +28,7 @@ const Navbar = () => {
             src="/assets/images/sangeet_logo_new.png"
             alt="Logo"
             width="150"
-            height="35"
+            height="70"
             className="d-inline-block align-text-top"
           />
         </a>

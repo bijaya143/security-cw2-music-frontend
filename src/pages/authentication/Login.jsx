@@ -133,7 +133,7 @@ const Login = () => {
               />
             </div>
             <div className="col-md-6 p-4">
-              <h1 className="mt-2">Welcome to Sangeet</h1>
+              <h1 className="mt-2">Welcome to Harmonica</h1>
               <h2 className="mt-2 mb-4">Sign In To Continue.</h2>
               <form className="mt-3" onSubmit={handleSubmit}>
                 <div className="form-outline mb-4">
