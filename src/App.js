@@ -141,6 +141,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        // ** ==================== Guest Routes ======================== ** //
         <Route path="/genres" element={<Genre />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
