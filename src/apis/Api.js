@@ -112,7 +112,7 @@ export const updateArtistApi = (id, data) =>
 export const deleteArtistApi = (id) =>
   Api.delete(`/artist/${id}`, getHeaders());
 
-// Genres
+// ** ==================== Genres API ======================== ** //
 export const addGenreApi = (data) => Api.post(`/genre`, data, getHeaders());
 export const updateGenreApi = (id, data) =>
   Api.patch(`/genre/${id}`, data, getHeaders());
