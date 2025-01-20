@@ -75,7 +75,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="/playlist/:id"
           element={
@@ -124,11 +123,29 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/subscribe"
+          element={
+            <ProtectedRoute>
+              <Subscription />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/subscription-success"
+          element={
+            <ProtectedRoute>
+              <SubscriptionSuccess />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/genres" element={<Genre />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
+        // ** ==================== Admin Protected Routes
+        ======================== ** //
         <Route
           path="/admin"
           element={
@@ -175,22 +192,6 @@ function App() {
             <AdminProtectedRoute>
               <AdminGenre />
             </AdminProtectedRoute>
-          }
-        />
-        <Route
-          path="/subscribe"
-          element={
-            <ProtectedRoute>
-              <Subscription />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/subscription-success"
-          element={
-            <ProtectedRoute>
-              <SubscriptionSuccess />
-            </ProtectedRoute>
           }
         />
       </Routes>
