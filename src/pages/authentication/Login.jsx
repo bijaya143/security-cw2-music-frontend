@@ -127,7 +127,7 @@ const Login = () => {
           <div className="row justify-content-center">
             <div className="col-md-6 image-container p-4">
               <img
-                src="assets/images/main_image.jpg"
+                src="assets/images/main_image.webp"
                 className="rounded img-fluid"
                 alt="Main"
               />
