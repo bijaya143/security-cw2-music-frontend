@@ -24,7 +24,7 @@ const Library = () => {
     const fetchData = async () => {
       try {
         const [playlistsResponse, favoritesResponse] = await Promise.all([
-          getPlaylistsApi(1),
+          getPlaylistsApi(1), // fetch playlists
           getFavoritesApi(1),
         ]);
         setPlaylists(playlistsResponse.data.data.userPlaylists);
