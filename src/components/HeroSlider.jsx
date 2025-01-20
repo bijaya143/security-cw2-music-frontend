@@ -2,11 +2,19 @@ import React from "react";
 import Slider from "react-slick";
 import HeroSlideCard from "./HeroSlideCard";
 import "./css/HeroSlider.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeroSlider = ({ items }) => {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const isPaid = user?.isPaid ?? false;
+
+  const handleLockedClick = () => {
+    navigate("/subscribe"); // Redirect to the subscription page if locked
+  };
+
   const settings = {
-    dots: false, // Dots are disabled
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
@@ -16,7 +24,7 @@ const HeroSlider = ({ items }) => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     centerMode: true,
-    centerPadding: "60px", // Increased padding to reveal the right card
+    centerPadding: "60px",
     responsive: [
       {
         breakpoint: 1024,
@@ -50,11 +58,18 @@ const HeroSlider = ({ items }) => {
       <h3 className="section-title">Crafted For You</h3>
       <Slider {...settings}>
         {items.slice(0, 5).map((item, index) => (
-          <Link to={`/song/${item._id}`}>
-            <div key={index} className="slider-item">
-              <HeroSlideCard item={item} />
-            </div>
-          </Link>
+          <div key={index} className="slider-item">
+            {/* Conditionally render the Link or a div */}
+            {isPaid ? (
+              <Link to={`/song/${item._id}`}>
+                <HeroSlideCard item={item} />
+              </Link>
+            ) : (
+              <div onClick={handleLockedClick}>
+                <HeroSlideCard item={item} />
+              </div>
+            )}
+          </div>
         ))}
       </Slider>
     </div>

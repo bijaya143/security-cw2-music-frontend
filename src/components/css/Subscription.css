@@ -1,0 +1,36 @@
+.subscription-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+.subscription-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subscription-page p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.subscribe-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscribe-button:hover {
+  background-color: #0056b3;
+}

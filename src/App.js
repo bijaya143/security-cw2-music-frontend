@@ -26,6 +26,7 @@ import AdminCustomer from "./pages/admin/customer/AdminCustomer";
 import AdminProtectedRoute from "./utils/AdminProtectedRoutes";
 import Unauthorized from "./pages/unauthorized/Unauthorized";
 import AdminGenre from "./pages/admin/genre/AdminGenre";
+import Subscription from "./components/Subscription";
 
 function App() {
   return (
@@ -173,6 +174,14 @@ function App() {
             <AdminProtectedRoute>
               <AdminGenre />
             </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/subscribe"
+          element={
+            <ProtectedRoute>
+              <Subscription />
+            </ProtectedRoute>
           }
         />
       </Routes>
