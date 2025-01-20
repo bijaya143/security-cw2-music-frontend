@@ -105,7 +105,7 @@ export const updateSongApi = (id, data) =>
   Api.patch(`/song/${id}`, data, getHeaders());
 export const deleteSongApi = (id) => Api.delete(`/song/${id}`, getHeaders());
 
-// Artists
+// ** ==================== Artists API ======================== ** //
 export const addArtistApi = (data) => Api.post(`/artist`, data, getHeaders());
 export const updateArtistApi = (id, data) =>
   Api.patch(`/artist/${id}`, data, getHeaders());
