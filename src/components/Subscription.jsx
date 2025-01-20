@@ -1,13 +1,20 @@
 import React from "react";
 import "./css/Subscription.css";
+import { khaltiApi, subscribeApi } from "../apis/Api";
 
 const Subscription = () => {
   const handleSubscription = () => {
-    // Logic to handle payment and update user subscription status
-    const user = JSON.parse(localStorage.getItem("user")) || {};
-    user.isPaid = true; // Update subscription status
-    localStorage.setItem("user", JSON.stringify(user));
-    alert("Subscription successful! Enjoy your content.");
+    khaltiApi()
+      .then((res) => {
+        window.location.href = res.data.payment_url;
+        subscribeApi()
+          .then((res) => {})
+          .catch((error) => {});
+        const user = JSON.parse(localStorage.getItem("user")) || {};
+        user.isPaid = true; // Update subscription status
+        localStorage.setItem("user", JSON.stringify(user));
+      })
+      .catch((error) => {});
   };
 
   return (

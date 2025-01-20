@@ -117,3 +117,50 @@ export const addGenreApi = (data) => Api.post(`/genre`, data, getHeaders());
 export const updateGenreApi = (id, data) =>
   Api.patch(`/genre/${id}`, data, getHeaders());
 export const deleteGenreApi = (id) => Api.delete(`/genre/${id}`, getHeaders());
+
+// Subscription
+export const subscribeApi = () => Api.post("/subscription", {}, getHeaders());
+
+// Khalti
+export const khaltiApi = () =>
+  axios.post(
+    "https://dev.khalti.com/api/v2/epayment/initiate/",
+    {
+      return_url: "http://localhost:3000/subscription-success",
+      website_url: "http://localhost:3000/",
+      amount: 10000,
+      purchase_order_id: "test12",
+      purchase_order_name: "test",
+      customer_info: {
+        name: "Bijaya Majhi",
+        email: "bijaya@gmail.com",
+        phone: "9800000123",
+      },
+      amount_breakdown: [
+        {
+          label: "Mark Price",
+          amount: 9900,
+        },
+        {
+          label: "VAT",
+          amount: 100,
+        },
+      ],
+      product_details: [
+        {
+          identity: "1234567890",
+          name: "Khalti logo",
+          total_price: 100,
+          quantity: 1,
+          unit_price: 100,
+        },
+      ],
+      merchant_username: "merchant_name",
+      merchant_extra: "merchant_extra",
+    },
+    {
+      headers: {
+        Authorization: "key fd62206371b94e5688835e8606304c84",
+      },
+    }
+  );
