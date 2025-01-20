@@ -99,7 +99,7 @@ export const getGenresApi = () => Api.get(`/genre`, getHeaders());
 // ** ==================== Admins API ======================== ** //
 export const getCustomersApi = () => Api.get(`/user`, getHeaders());
 
-// Songs
+// ** ==================== Songs API ======================== ** //
 export const addSongApi = (data) => Api.post(`/song`, data, getHeaders());
 export const updateSongApi = (id, data) =>
   Api.patch(`/song/${id}`, data, getHeaders());
