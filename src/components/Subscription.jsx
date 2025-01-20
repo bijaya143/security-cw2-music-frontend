@@ -6,7 +6,7 @@ const Subscription = () => {
   const handleSubscription = () => {
     khaltiApi()
       .then((res) => {
-        window.location.href = res.data.payment_url;
+        window.location.href = res.data.payment_url; // Send to khalti
         subscribeApi()
           .then((res) => {})
           .catch((error) => {}); // Error handling
