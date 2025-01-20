@@ -118,7 +118,7 @@ export const updateGenreApi = (id, data) =>
   Api.patch(`/genre/${id}`, data, getHeaders());
 export const deleteGenreApi = (id) => Api.delete(`/genre/${id}`, getHeaders());
 
-// Subscription
+// ** ==================== Subscription API ======================== ** //
 export const subscribeApi = () => Api.post("/subscription", {}, getHeaders());
 
 // Khalti
