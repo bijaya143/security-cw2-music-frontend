@@ -1,0 +1,158 @@
+.customer-table-container {
+  display: flex;
+  min-height: 100vh; /* Ensure it takes up at least the full viewport height */
+}
+
+.customer-table-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background color for content area */
+  margin-left: 0px; /* Adjust margin to accommodate the sidebar */
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 10px 15px;
+  border: 1px solid #ccc; /* Light border for a subtle look */
+  border-radius: 8px; /* Rounded corners for a modern appearance */
+  width: 100%;
+  max-width: 400px; /* Limit width for better control */
+  margin-right: 20px; /* Space between search bar and button */
+  font-size: 1rem;
+  color: #333; /* Dark text color for readability */
+  background-color: #fff; /* White background for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* More pronounced shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.btn-add {
+  padding: 10px 15px;
+  border: none;
+  background-color: #000000; /* Blue background color */
+  color: #fff; /* White text color */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Enable horizontal scroll for large tables */
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Light border for table rows */
+}
+
+.customer-table th {
+  background-color: #007bff; /* Header background color */
+  color: #fff; /* Header text color */
+}
+
+.customer-table tbody tr:hover {
+  background-color: #e9ecef; /* Highlight row on hover */
+}
+
+.customer-table th:last-child,
+.customer-table td:last-child {
+  width: 150px; /* Adjust width as needed */
+  text-align: center; /* Center align text for action buttons */
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination-button:hover {
+  background-color: #e9ecef;
+}

@@ -1,0 +1,55 @@
+.hero-slider {
+  position: relative;
+  padding: 0; /* Remove padding for precise control */
+  /* background-color: #f8f9fa; */
+  border-radius: 12px;
+  margin-bottom: 30px; /* Space for dots if enabled in future */
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-slider .section-title {
+  /* text-align: center; */
+  /* font-size: 1.5rem; */
+  /* margin: 20px 0;  */
+  color: #333;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  margin: 0 15px; /* Gap between cards */
+}
+
+/* Adjust slider item width for two cards with gap */
+.slider-item {
+  width: 100%;
+}
+
+/* Set a fixed height for the slider if needed */
+.slick-list {
+  height: 300px; /* Adjust height as needed */
+}
+
+/* Adjusted styles to ensure proper positioning of slides */
+@media (max-width: 1024px) {
+  .slick-slide > div {
+    width: calc(50% - 40px); /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .slick-slide > div {
+    width: calc(100% - 20px); /* Full width for single card */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider .slick-dots {
+    bottom: 10px; /* Adjusted for smaller screens */
+  }
+  .hero-slider .slick-dots button {
+    width: 8px;
+    height: 8px;
+  }
+}

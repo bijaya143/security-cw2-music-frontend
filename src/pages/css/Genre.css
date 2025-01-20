@@ -1,0 +1,32 @@
+/* Genre.css */
+.genre-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.genre-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.save-button {
+  background-color: #007bff; /* Bootstrap primary color, or any color of your choice */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #0056b3; /* Darker shade of the button color for hover effect */
+}
+
+.save-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5); /* Optional focus effect */
+}

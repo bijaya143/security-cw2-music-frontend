@@ -1,0 +1,71 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: #ffffff; /* Light background for a modern look */
+  color: #333333; /* Dark text color for contrast */
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f9fc; /* Light background for profile section */
+  border-bottom: 1px solid #e0e0e0; /* Light border for separation */
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #007bff; /* Border color for profile picture */
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff; /* Highlight color for profile name */
+}
+
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  padding: 10px 20px;
+}
+
+.sidebar-nav a {
+  color: #333333; /* Default text color */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: #e9ecef; /* Light background on hover */
+  color: #007bff; /* Highlight color on hover */
+}
+
+.sidebar-nav a.active {
+  color: #007bff; /* Text color for active link */
+}
+
+.sidebar-icon {
+  margin-right: 15px;
+  font-size: 1.3rem;
+}

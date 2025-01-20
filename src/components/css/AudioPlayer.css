@@ -1,0 +1,129 @@
+.player-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 800px;
+  margin: 0px auto;
+}
+
+.player-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.player-card-img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 5px;
+  accent-color: #29439a;
+  outline: none;
+}
+
+.track-duration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.player-card-button {
+  width: 3rem;
+  height: 3rem;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #29439a;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0px auto;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.player-card-button:hover {
+  background-color: #233373;
+  transform: scale(1.1);
+}
+
+.track-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.favorite-button,
+.add-to-playlist-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  font-size: 1.5em;
+  transition: color 0.2s;
+}
+
+.favorite-button:hover i,
+.add-to-playlist-button:hover i {
+  color: #29439a;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  color: #333;
+}
+
+.song-detail-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.song-detail-item i {
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .player-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .player-card-img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .player-card-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 20px;
+  }
+
+  .favorite-button,
+  .add-to-playlist-button {
+    font-size: 1.2em;
+  }
+}

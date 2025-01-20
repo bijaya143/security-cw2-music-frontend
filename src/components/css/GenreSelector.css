@@ -1,0 +1,44 @@
+/* GenreSelector.css */
+.genre-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f0f0; /* Light background for better contrast */
+  border-radius: 10px;
+}
+
+.genre-card {
+  background-color: #ffffff; /* White background for the cards */
+  border: 1px solid #ddd; /* Light border for a subtle outline */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px; /* Larger font size for better readability */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333; /* Dark text color for better contrast */
+}
+
+.genre-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.genre-name {
+  font-weight: bold;
+}
+
+.genre-card.selected {
+  background-color: #007bff; /* Highlight color for selected genre */
+  color: white; /* White text for selected genre */
+  border: 1px solid #0056b3; /* Darker border for selected genre */
+}
+
+.genre-card.selected .genre-name {
+  color: white; /* Ensure text is readable when selected */
+}

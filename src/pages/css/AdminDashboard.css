@@ -1,0 +1,134 @@
+/* AdminDashboard.css */
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f6f9;
+  margin-left: 0; /* Remove margin for responsive design */
+}
+
+.header {
+  padding: 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.dashboard-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.dashboard-card-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.dashboard-card-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.dashboard-card-value {
+  font-size: 2rem;
+  margin: 0;
+  color: #007bff;
+}
+
+.dashboard-card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-view {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-view:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .dashboard-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    min-width: 100%;
+  }
+
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-icon {
+    font-size: 1.2rem;
+  }
+
+  .card-value {
+    font-size: 1.5rem;
+  }
+}

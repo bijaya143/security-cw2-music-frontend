@@ -1,0 +1,7 @@
+.list-group-item {
+  transition: color 0.3s ease;
+}
+
+.list-group-item:hover {
+  color: #007bff; /* Change to your desired hover color */
+}

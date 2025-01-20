@@ -1,0 +1,148 @@
+.all-playlists {
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.playlists-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to the next row if necessary */
+  gap: 20px; /* Space between playlist items */
+}
+
+.playlist-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.playlist-item {
+  flex: 1 1 calc(25% - 20px); /* Adjust the percentage to fit your layout */
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+  background-color: #fff;
+  padding: 10px; /* Add padding to space out the content inside */
+}
+
+.playlist-item:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+.playlist-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%; /* Ensure it takes full width of the playlist-item */
+}
+
+.playlist-image {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.playlist-image img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px; /* Adjust the margin if needed */
+}
+
+.playlist-info {
+  flex: 1;
+  padding: 10px 0; /* Add padding for spacing within the info section */
+}
+
+.playlist-name {
+  font-size: 1.2rem;
+  color: #000;
+  margin: 0;
+}
+
+.playlist-details {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0; /* Add some margin between details */
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #f00;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .playlist-item {
+    flex: 1 1 calc(50% - 20px); /* Adjust for smaller screens */
+  }
+
+  .playlist-image img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .playlist-item {
+    flex: 1 1 100%; /* Full width for very small screens */
+  }
+
+  .playlist-image img {
+    width: 60px;
+    height: 60px;
+  }
+}

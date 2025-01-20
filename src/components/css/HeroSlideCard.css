@@ -1,0 +1,50 @@
+.hero-slide-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff; /* Ensure card background is white */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Remove default shadow */
+}
+
+.hero-slide-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+.hero-slide-card-img-container {
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+}
+
+.hero-slide-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-slide-card-details {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: none; /* Ensure no shadow on details */
+}
+
+.hero-slide-card-title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.hero-slide-card-artist {
+  margin: 5px 0 0;
+  font-size: 1rem;
+}
