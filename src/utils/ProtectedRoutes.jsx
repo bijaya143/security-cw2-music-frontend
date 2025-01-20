@@ -8,6 +8,7 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/login" />;
   }
 
+  // Selection of genres
   if (currentUser && (!currentUser.genres || currentUser.genres.length === 0)) {
     return <Navigate to="/genres" />;
   }
