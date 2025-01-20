@@ -22,7 +22,7 @@ const Subscription = () => {
       <h1>Subscribe Now</h1>
       <p>Unlock all content with a one-time subscription.</p>
       <button className="subscribe-button" onClick={handleSubscription}>
-        Subscribe for Rs. 100
+        Subscribe for Rs 100
       </button>
     </div>
   );
