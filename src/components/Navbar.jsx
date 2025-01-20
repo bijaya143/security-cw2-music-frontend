@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.clear(); // Clear data from the local storage
-    navigate("/login");
+    navigate("/login"); // navigate to auth page
   };
 
   const [keyword, setKeyword] = useState("");
