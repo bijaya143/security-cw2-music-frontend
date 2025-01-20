@@ -35,8 +35,7 @@ function App() {
       <Navbar />
       <ToastContainer />
       <Routes>
-        // ** ==================== Auth Protected Routes
-        ======================== ** //
+        // ** ==================== Auth Routes ======================== ** //
         <Route
           path="/"
           element={
