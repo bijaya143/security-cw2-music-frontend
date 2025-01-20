@@ -9,7 +9,7 @@ const Subscription = () => {
         window.location.href = res.data.payment_url;
         subscribeApi()
           .then((res) => {})
-          .catch((error) => {});
+          .catch((error) => {}); // Error handling
         const user = JSON.parse(localStorage.getItem("user")) || {};
         user.isPaid = true; // Update subscription status
         localStorage.setItem("user", JSON.stringify(user));
