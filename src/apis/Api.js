@@ -121,7 +121,7 @@ export const deleteGenreApi = (id) => Api.delete(`/genre/${id}`, getHeaders());
 // ** ==================== Subscription API ======================== ** //
 export const subscribeApi = () => Api.post("/subscription", {}, getHeaders());
 
-// Khalti
+// ** ==================== Khalti API ======================== ** //
 export const khaltiApi = () =>
   axios.post(
     "https://dev.khalti.com/api/v2/epayment/initiate/",
