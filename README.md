@@ -1,4 +1,4 @@
-## Sangeet Frontend
+## Harmonica Frontend
 
 ## Table of contents
 
