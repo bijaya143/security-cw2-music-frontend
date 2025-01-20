@@ -147,8 +147,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
-        // ** ==================== Admin Protected Routes
-        ======================== ** //
+        // ** ==================== Admin Routes ======================== ** //
         <Route
           path="/admin"
           element={
