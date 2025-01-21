@@ -17,6 +17,8 @@ const Register = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [token, setToken] = useState("");
 
   //Social
   const [user, setUser] = useState([]);
@@ -26,6 +28,11 @@ const Register = () => {
   const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+
+  // Modal
+  const [showOtpModal, setShowOtpModal] = useState(false);
+  const [otp, setOtp] = useState("");
 
   // Handle Error States
   var validate = () => {
@@ -46,6 +53,10 @@ const Register = () => {
       setPasswordError("Please enter password.");
       isValid = false;
     }
+    if (phone.trim() === "") {
+      setPhoneError("Please enter phone.");
+      isValid = false;
+    }
     return isValid;
   };
 
@@ -62,6 +73,7 @@ const Register = () => {
       firstName: firstName,
       lastName: lastName,
       email: email,
+      phone: phone,
       password: password,
     };
     registerUserApi(data)
@@ -71,16 +83,10 @@ const Register = () => {
           toast.error(res.data?.message);
         } else {
           toast.success("Registration Successful");
-          localStorage.setItem("token", res.data?.data?.accessToken); // Set Token
-
-          // Decode Token and Convert JSON
-          const user = jwtDecode(res.data.data.accessToken);
-          const stringifiedData = JSON.stringify(user);
-
-          localStorage.setItem("user", stringifiedData); // Set User
-
-          window.location.reload(); // Page Reload
-          navigate("/"); // Navigate to homepage
+          setToken(res.data?.data?.accessToken);
+          setShowOtpModal(true); // Show OTP Modal
+          // window.location.reload(); // Page Reload
+          // navigate("/"); // Navigate to homepage
         }
       })
       .catch((err) => {
@@ -95,6 +101,28 @@ const Register = () => {
           toast.error("Please try again");
         }
       });
+  };
+
+  const handleOtpSubmit = () => {
+    if (!otp.trim()) {
+      toast.error("Please enter the OTP.");
+      return;
+    }
+
+    if (otp === "123456") {
+      toast.success("OTP Verified Successfully!");
+
+      localStorage.setItem("token", token); // Set Token
+      // Decode Token and Convert JSON
+      const user = jwtDecode(token);
+      const stringifiedData = JSON.stringify(user);
+      localStorage.setItem("user", stringifiedData); // Set User
+
+      setShowOtpModal(false);
+    } else {
+      toast.error("OTP is invalid.");
+      return;
+    }
   };
 
   const loginWithGoogle = useGoogleLogin({
@@ -233,6 +261,22 @@ const Register = () => {
                 </div>
                 <div className="form-outline mb-4">
                   <label className="form-label" htmlFor="">
+                    Phone
+                  </label>
+                  <input
+                    type="phone"
+                    name=""
+                    id=""
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="form-control"
+                    placeholder="Enter Phone"
+                  />
+                  {phoneError && (
+                    <small className="text text-danger">{phoneError}</small>
+                  )}
+                </div>
+                <div className="form-outline mb-4">
+                  <label className="form-label" htmlFor="">
                     Password
                   </label>
                   <input
@@ -259,6 +303,39 @@ const Register = () => {
                 </div>
               </form>
 
+              {/* OTP Modal */}
+              {showOtpModal && (
+                <div className="modal" style={modalStyles}>
+                  <div className="modal-content p-4" style={modalContentStyles}>
+                    <h2>Enter OTP</h2>
+                    <div className="form-group">
+                      <label>OTP</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                        placeholder="Enter OTP"
+                      />
+                    </div>
+                    <div className="d-flex justify-content-end mt-3">
+                      <button
+                        className="btn btn-secondary me-2"
+                        onClick={() => setShowOtpModal(false)}
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="btn btn-primary"
+                        onClick={handleOtpSubmit}
+                      >
+                        Submit OTP
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="text-center mt-4">
                 <h3 className="text-center mt-3">OR</h3>
                 <a onClick={loginWithGoogle}>
@@ -284,6 +361,28 @@ const Register = () => {
       )}
     </>
   );
+};
+
+// Inline Styles for Modal
+const modalStyles = {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100vw",
+  height: "100vh",
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  zIndex: 1050,
+};
+
+const modalContentStyles = {
+  backgroundColor: "#fff",
+  borderRadius: "8px",
+  maxWidth: "500px",
+  width: "100%",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
 };
 
 export default Register;
