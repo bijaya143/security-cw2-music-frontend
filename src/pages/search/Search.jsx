@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { getSearchSongsApi } from "../../apis/Api";
 import "../css/Search.css";
 import debounce from "lodash.debounce";
+import DOMPurify from "dompurify";
 
 const Search = () => {
   const [searchParams] = useSearchParams();
@@ -77,7 +78,12 @@ const Search = () => {
           <Library />
         </div>
         <div className="col-md-9 p-3">
-          <h3 className="search-title">Search Results for: {keyword}</h3>
+          <h3
+            className="search-title"
+            dangerouslySetInnerHTML={{
+              __html: `Search Results for: ${DOMPurify.sanitize(keyword)}`,
+            }}
+          ></h3>
           <div className="search-results">
             {songs.length > 0 ? (
               songs.map((trendingSong) => (
