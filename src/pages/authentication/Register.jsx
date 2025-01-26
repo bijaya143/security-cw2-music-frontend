@@ -35,28 +35,53 @@ const Register = () => {
   const [otp, setOtp] = useState("");
 
   // Handle Error States
-  var validate = () => {
-    var isValid = true;
+  // Update the validate function
+  const validate = () => {
+    let isValid = true;
+
     if (firstName.trim() === "") {
       setFirstNameError("Please enter first name.");
       isValid = false;
+    } else {
+      setFirstNameError("");
     }
+
     if (lastName.trim() === "") {
       setLastNameError("Please enter last name.");
       isValid = false;
+    } else {
+      setLastNameError("");
     }
+
     if (email.trim() === "") {
       setEmailError("Please enter email.");
       isValid = false;
+    } else {
+      setEmailError("");
     }
-    if (password.trim() === "") {
-      setPasswordError("Please enter password.");
-      isValid = false;
-    }
+
     if (phone.trim() === "") {
       setPhoneError("Please enter phone.");
       isValid = false;
+    } else {
+      setPhoneError("");
     }
+
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (password.trim() === "") {
+      setPasswordError("Please enter password.");
+      isValid = false;
+    } else if (!passwordRegex.test(password)) {
+      setPasswordError(
+        "Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character."
+      );
+      isValid = false;
+    } else {
+      setPasswordError("");
+    }
+
     return isValid;
   };
 
